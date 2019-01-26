@@ -1,0 +1,20 @@
+1. SELECT * FROM `products` WHERE title LIKE '%Sok%' or description LIKE '%Sok%';
+2. SELECT * FROM `products` WHERE discount > 0 AND category NOT LIKE 'Pice';
+3. SELECT * FROM `products` WHERE title LIKE 'V____';
+4. SELECT * FROM `products` ORDER BY priority ASC;
+5. SELECT * FROM `products` ORDER BY discount DESC LIMIT 3;
+6. SELECT * FROM `products` ORDER BY discount DESC LIMIT 1 OFFSET 1;
+7. SELECT DISTINCT sticker FROM `products`;
+8. SELECT * FROM `products` WHERE category LIKE 'Hrana'ORDER BY discount DESC;
+9. SELECT category, COUNT(id) FROM `products` GROUP by category;
+10. SELECT * FROM `products` WHERE price BETWEEN 70 AND 300;
+10. SELECT SUM(price) FROM products;
+10. SELECT SUM(price) from `products` where category LIKE 'Hrana';
+10. SELECT SUM(price), category from `products` GROUP BY category;
+10. SELECT title,  
+min(ABS((price - (SELECT AVG(price) FROM products Where category LIKE 'Pice')))) AS 'Cena_najbliža_proseku_cena_u_kategoriji' 
+from products
+where category like 'Pice';
+
+
+
